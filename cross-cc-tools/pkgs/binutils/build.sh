@@ -24,3 +24,8 @@ pushd $SRC_DIR
         make install
     popd
 popd
+
+# clean up
+rm *.xz
+rm -rf $SRC_DIR
+

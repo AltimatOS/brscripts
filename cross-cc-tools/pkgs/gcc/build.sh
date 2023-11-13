@@ -51,3 +51,9 @@ pushd $SRC_DIR
     cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
       $(dirname $($BLD_TARGET-gcc -print-libgcc-file-name))/include/limits.h
 popd
+
+# clean up
+rm *.gz
+rm *.xz
+rm -rf $SRC_DIR
+
