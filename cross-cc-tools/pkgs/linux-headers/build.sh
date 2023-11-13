@@ -22,7 +22,7 @@ pushd $SRC_DIR
     # make headers
     make headers
     find usr/include -type f ! -name '*.h' -delete
-    sudo cp -r -v usr/include $BLDROOT/System
+    cp -r -v usr/include $BLDROOT/System
 popd
 
 # clean up
