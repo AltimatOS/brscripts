@@ -29,23 +29,17 @@ umask 022
 BLDROOT=/AltimatOS
 HOME=/Users/builder
 LC_ALL=POSIX
-PATH=/cross-tools/bin:/bin:/usr/bin
+PATH=/tools/bin:/bin:/usr/bin:/System/bin
 export BLDROOT LC_ALL PATH HOME
 unset CFLAGS CXXFLAGS PKG_CONFIG_PATH
 
 # build variables
-BLD_HOST=$(echo ${MACHTYPE} | sed -e 's/-[^-]*/-cross/')
-BLD_TARGET="x86_64-unknown-linux-gnu"
-BLD_TARGET32="i686-pc-linux-gnu"
-BUILD32="-m32"
-BUILD64="-m64"
+BLD_TARGET="x86_64-altimatos-linux-gnu"
+BLD_TARGET32="i686-altimatos-linux-gnu"
 
 # now export the vars
-export BLD_HOST
 export BLD_TARGET
 export BLD_TARGET32
-export BUILD32
-export BUILD64
 EOF
         # correct permissions
         chown -v builder:builders ~builder/.bashrc
