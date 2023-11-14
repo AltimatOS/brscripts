@@ -31,10 +31,6 @@ pushd $SRC_DIR
     tar xvf ../$SOURCE3
     mv -v mpfr-4.2.1 mpfr
 
-    sed -e '/m64=/s/lib64/lib/' \
-        -e '/m32=/s/m32=.*/m32=..\/lib$(call if_multiarch,:i386-linux-gnu)/' \
-        -i.orig gcc/config/i386/t-linux64
-
     mkdir -v build
     pushd build
         # now configure the package
