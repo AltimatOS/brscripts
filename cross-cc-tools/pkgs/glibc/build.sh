@@ -63,6 +63,10 @@ pushd $SRC_DIR
         cp -r -v DESTDIR/System/lib $BLDROOT/System/
         install -v -m 644 DESTDIR/System/include/gnu/{lib-names,stubs}-32.h $BLDROOT/System/include/gnu/
     popd
+    # fix for symlink
+    pushd $BLDROOT/System/lib
+        ln -s /System/lib64/ld-linux-x86-64.so.2
+    popd
 popd
 
 # clean up
